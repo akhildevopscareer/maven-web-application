@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools {maven 'maven-3.8.6'}
     triggers{
-        cron('* * * * *')
+        pollSCM('* * * * *')
     }
     options{
         buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
